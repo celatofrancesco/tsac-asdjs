@@ -1,0 +1,55 @@
+//Debug => cliccando sul numero della riga, si puo' fare un istruzione alla volta
+
+In Javascript non ci sono classi, l'oggetto e' un associazione tra chiave e valore
+
+console.log('Hello '+a);
+var myarray=array.slice(a,b);	//ritaglia un array da indice "a" incluso, "b" escluso
+array.splice(i,n);		//elimina "n" elementi a partire dall'indice "i" incluso
+array.splice(i,0,x);		//inserisce l'elemento "x" in posizione i senza cancellare niente
+array.push(x);			//aggiunge "x" in coda all'array
+var myarray=array.slice();	//copia l'array
+array.unshift(x);		//aggiunge "x" in testa all'array
+var x=array.pop();		//toglie l'elemento in coda e lo salva nella variabile "x"
+______________________________________________________________________________________________________
+
+function(a,b)			//anonymous function
+{
+	return a+b;
+}
+
+(a,b)=>{return a+b;}		//lambda statement
+
+a,b => a+b			//lambda expression
+______________________________________________________________________________________________________
+
+array.forEach(			//per ogni elemento dell'array richiama la funzione
+		function(x)
+		{
+			//fai qualcosa con l'elemento
+			//non ritorna niente
+			//bisogna utilizzare le variabili locali
+		}
+	);
+
+var tot=array.reduce(		//ritorna il valore finale dell'accomulatore
+		function(acc,x)
+		{
+			return acc+x;	//aggiorna il valore dell'accomulatore
+					//verra' usato nella prossima chiamata della funzione
+		}
+	,0);	//valore iniziale dell'accomulatore, default=1
+
+var myarray=array.filter(	//filtra i valori di un array e li mette in un altro array
+		function(x)
+		{
+			return x%2==0;	//deve ritornare true o false
+					//mantiene solo i valori dell'array che ritornano true
+		}
+	);
+
+var myarray=array.map(		//per ogni elemento dell'array richiama la funzione
+		function(x)
+		{
+			return x*2;	//salva il risultato in un nuovo array
+		}
+	);
